@@ -44,7 +44,6 @@ def reset():
 
     global circle_clickable
     circle_clickable = True
-    print("Inside reset:", circle_clickable)
 
 
 def get_color_for_player_turn():
@@ -163,8 +162,6 @@ def clicked(*args):
                         canvas.after(3000, reset)
                     else:
                         gl.is_first_player_turn = not gl.is_first_player_turn
-    else:
-        print(circle_clickable)
 
 def initialize_circles():
     global minim_space_between_circles_x

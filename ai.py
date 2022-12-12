@@ -1,7 +1,7 @@
 import game_logic as gl
 
 is_ai_first_player = True
-is_ai_playing = False
+is_ai_playing = True
 infinity = 100000
 
 
@@ -17,9 +17,15 @@ def get_available_row_for_column(table, column):
     return None
 
 
-def get_table_with_added_move(table, row, column):
+def get_table_with_added_move(table, row, column, maximizing_player):
     new_table = [row[:] for row in table]  # copies the original table in the new table
-    new_table[row][column] = gl.get_current_player_index()
+
+    if (maximizing_player and is_ai_first_player) or (not maximizing_player and not is_ai_first_player):
+        player_piece = 1
+    else:
+        player_piece = 2
+
+    new_table[row][column] = player_piece
     return new_table
 
 
@@ -140,6 +146,14 @@ def evaluate_table(table, is_table_in_winning_position, maximizing_player):
 
 def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column):
     is_table_in_winning_position = gl.is_move_winner(last_row, last_column, table)[0]
+
+    if is_table_in_winning_position:
+        if maximizing_player:
+            print("Table is in winning position for player")
+        else:
+            print("Table is in winning position for AI")
+        print_table(table)
+
     best_move = None
     if depth == 0 or is_table_in_winning_position:
         output = evaluate_table(table, is_table_in_winning_position, maximizing_player), best_move
@@ -152,7 +166,7 @@ def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column)
     if maximizing_player:  # AI player
         max_eval = -infinity
         for move in get_available_moves_from_current_table(table):
-            new_table = get_table_with_added_move(table, move[0], move[1])
+            new_table = get_table_with_added_move(table, move[0], move[1], maximizing_player)
             # print("child table:")
             # print_table(new_table)
 
@@ -170,11 +184,11 @@ def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column)
     else:
         min_eval = +infinity
         for move in get_available_moves_from_current_table(table):
-            new_table = get_table_with_added_move(table, move[0], move[1])
+            new_table = get_table_with_added_move(table, move[0], move[1], maximizing_player)
             # print("child table:")
             # print_table(new_table)
 
-            eval = minimax(new_table, depth - 1, alpha, beta, False, move[0], move[1])[0]
+            eval = minimax(new_table, depth - 1, alpha, beta, True, move[0], move[1])[0]
 
             if eval < min_eval:
                 min_eval = eval

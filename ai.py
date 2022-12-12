@@ -1,6 +1,6 @@
 import game_logic as gl
 
-is_ai_first_player = True
+is_ai_first_player = False
 is_ai_playing = True
 infinity = 100000
 
@@ -154,21 +154,16 @@ def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column)
             print("Table is in winning position for AI")
         print_table(table)
 
-    best_move = None
+    best_move = get_available_moves_from_current_table(table)[0]
     if depth == 0 or is_table_in_winning_position:
         output = evaluate_table(table, is_table_in_winning_position, maximizing_player), best_move
         # print(output)
         return output
 
-    # print("parent table:")
-    # print_table(table)
-
     if maximizing_player:  # AI player
         max_eval = -infinity
         for move in get_available_moves_from_current_table(table):
             new_table = get_table_with_added_move(table, move[0], move[1], maximizing_player)
-            # print("child table:")
-            # print_table(new_table)
 
             eval = minimax(new_table, depth - 1, alpha, beta, False, move[0], move[1])[0]
 
@@ -185,8 +180,6 @@ def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column)
         min_eval = +infinity
         for move in get_available_moves_from_current_table(table):
             new_table = get_table_with_added_move(table, move[0], move[1], maximizing_player)
-            # print("child table:")
-            # print_table(new_table)
 
             eval = minimax(new_table, depth - 1, alpha, beta, True, move[0], move[1])[0]
 

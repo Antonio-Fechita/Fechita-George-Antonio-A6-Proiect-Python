@@ -1,8 +1,10 @@
 import game_logic as gl
+import graphics as g
 
 is_ai_first_player = False
 is_ai_playing = True
-infinity = 100000
+infinity = 10000
+original_depth = 5
 
 
 def print_table(table):
@@ -26,16 +28,12 @@ def get_table_with_added_move(table, row, column, maximizing_player):
         player_piece = 2
 
     new_table[row][column] = player_piece
+
     return new_table
 
 
 def get_available_moves_from_current_table(table):
     moves_list = []
-
-    # for column in range(0, gl.number_of_columns):
-    #     row = get_available_row_for_column(table, column)
-    #     if row is not None:
-    #         moves_list.append((row, column))
 
     if gl.number_of_columns % 2 == 1:
         column = gl.number_of_columns // 2
@@ -56,6 +54,7 @@ def get_available_moves_from_current_table(table):
             if row is not None:
                 moves_list.append((row, column))
 
+    # print("moves list: ", moves_list)
     return moves_list
 
 
@@ -77,13 +76,17 @@ def analyze_selected_pieces(analyzed_pieces):
         number_of_ai_pieces = analyzed_pieces.count(2)
         number_of_player_pieces = analyzed_pieces.count(1)
 
-    if number_of_ai_pieces == 3:
+    if number_of_ai_pieces == 4:
+        return 10000
+    elif number_of_ai_pieces == 3:
         return 500
     elif number_of_ai_pieces == 2:
         return 100
     elif number_of_ai_pieces == 1:
         return 10
 
+    elif number_of_player_pieces == 4:
+        return -10000
     elif number_of_player_pieces == 3:
         return -500
     elif number_of_player_pieces == 2:
@@ -94,22 +97,15 @@ def analyze_selected_pieces(analyzed_pieces):
     return 0
 
 
-def evaluate_table(table, is_table_in_winning_position, maximizing_player):
+def evaluate_table(table, is_table_in_winning_position, maximizing_player, depth):
     if is_table_in_winning_position:
         if maximizing_player:
-            return -2 * infinity
+            return -10 * infinity
         else:
-            return infinity
+            return 10 * infinity
 
     if is_table_filled(table):
         return 0
-
-    if is_ai_first_player:
-        ai_piece = 1
-        player_piece = 2
-    else:
-        ai_piece = 2
-        player_piece = 1
 
     score = 0
 
@@ -144,24 +140,32 @@ def evaluate_table(table, is_table_in_winning_position, maximizing_player):
     return score
 
 
+def scan_for_instant_win(table):
+    available_moves = get_available_moves_from_current_table(table)
+    for move in available_moves:
+        new_table = get_table_with_added_move(table, move[0], move[1], True)
+        if gl.is_move_winner(move[0], move[1], new_table)[0]:
+            return True, move
+    return False, None
+
+
 def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column):
     is_table_in_winning_position = gl.is_move_winner(last_row, last_column, table)[0]
 
-    if is_table_in_winning_position:
-        if maximizing_player:
-            print("Table is in winning position for player")
-        else:
-            print("Table is in winning position for AI")
-        print_table(table)
-
     best_move = get_available_moves_from_current_table(table)[0]
     if depth == 0 or is_table_in_winning_position:
-        output = evaluate_table(table, is_table_in_winning_position, maximizing_player), best_move
-        # print(output)
+        output = evaluate_table(table, is_table_in_winning_position, maximizing_player, depth), best_move
         return output
 
     if maximizing_player:  # AI player
+
+        if depth == original_depth:
+            is_winnable_in_one_move = scan_for_instant_win(table)
+            if is_winnable_in_one_move[0]:
+                return infinity, is_winnable_in_one_move[1]
+
         max_eval = -infinity
+
         for move in get_available_moves_from_current_table(table):
             new_table = get_table_with_added_move(table, move[0], move[1], maximizing_player)
 
@@ -193,4 +197,16 @@ def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column)
 
 
 def predict_best_move():
-    return minimax(gl.table, 4, -infinity, +infinity, True, None, None)[1]
+    return minimax(gl.table, original_depth, -infinity, +infinity, True, None, None)[1]
+
+
+def tables_equal(table1, table2):
+    for row in range(0, len(table1)):
+        for column in range(0, len(table1[0])):
+            if table1[row][column] != table2[row][column]:
+                return False
+    return True
+
+
+if __name__ == '__main__':
+    g.main()

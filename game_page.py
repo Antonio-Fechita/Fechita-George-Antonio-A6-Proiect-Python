@@ -18,7 +18,7 @@ space_between_circles_y = None  # space between circles on Y axis
 minim_space_between_circles_x = 20  # space_between_circles_x must be a minimum of this value, but it can also be a bigger value
 minim_space_between_circles_y = 20  # space_between_circles_y must be a minimum of this value, but it can also be a bigger value
 
-clickable = True
+clickable = True  # prevents adding pieces to the table if the game finished
 
 background_color = "#323232"  # hex color code for the background
 table_color = "#34AFDE"  # hex color code for the table
@@ -59,7 +59,7 @@ def initialize_game():
 
 def menu_page():
     """
-    changes the game page with the main menu page
+    Changes the game page with the main menu page
     """
     root.destroy()
     menu.main()
@@ -169,7 +169,7 @@ def convert_coordinates_to_rows_and_columns(x, y):
 
 def convert_rows_and_columns_to_coordinates(row, column):
     """
-    Converts row and column of a circle in the table to the coordinates of it's center on that table
+    Converts row and column of a circle in the table to the coordinates of circle's center on the screen
     :param row: row that the circle is on
     :param column: column that the circle is on
     :return: a tuple with the x and y coordinates for the circle's center on the screen
@@ -287,7 +287,7 @@ def canvas_clicked(event):
     if clickable:
         row = ai.get_available_row_for_column(gl.table, hovered_column)
 
-        if row is not None:
+        if row is not None:  # if hovered column is not filled
             gl.number_of_played_pieces = gl.number_of_played_pieces + 1
             column = hovered_column
 
@@ -313,6 +313,7 @@ def canvas_clicked(event):
                 canvas.after(3000, menu_page)
 
             elif gl.is_game_in_draw_state():
+                print("Draw!")
                 clickable = False
                 canvas.after(3000, menu_page)
 
@@ -338,6 +339,7 @@ def canvas_clicked(event):
                         canvas.after(3000, menu_page)
 
                     elif gl.is_game_in_draw_state():
+                        print("Draw!")
                         clickable = False
                         canvas.after(3000, menu_page)
 

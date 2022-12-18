@@ -292,14 +292,12 @@ def make_a_move():
     If the selected difficulty is hard the AI will always pick what it considers to be the best available move currently
     :return:
     """
-    print(difficulty)
     if difficulty == 0:
         return pick_random_available_move()
     elif difficulty == 1:
         if random.choice([0, 1]) == 0:
             return pick_random_available_move()
     return minimax(gl.table, max_depth, -infinity, +infinity, True, None, None)[1]
-
 
 
 if __name__ == '__main__':

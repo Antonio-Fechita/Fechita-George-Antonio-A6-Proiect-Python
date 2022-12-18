@@ -152,22 +152,22 @@ def is_move_winner(row, column, some_table):
     # vertical line
     if row + 3 < number_of_rows and player_piece == some_table[row + 1][column] == some_table[row + 2][column] == \
             some_table[row + 3][column]:
-        # print("VERTICAL")
+
         return True, ((row, column), (row + 3, column))
 
     check_horizontal_line_output = check_horizontal_line(row, column, some_table)
     if check_horizontal_line_output[0]:
-        # print("HORIZONTAL")
+
         return check_horizontal_line_output
 
     check_main_diagonal_output = check_main_diagonal(row, column, some_table)
     if check_main_diagonal_output[0]:
-        # print("MAIN DIAGONAL")
+
         return check_main_diagonal_output
 
     check_secondary_diagonal_output = check_secondary_diagonal(row, column, some_table)
     if check_secondary_diagonal_output[0]:
-        # print("SECONDARY DIAGONAL")
+
         return check_secondary_diagonal_output
 
     return False, None

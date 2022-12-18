@@ -1,8 +1,8 @@
-import ai
-import graphics as g
+import game_page as g
 
 number_of_rows = 6  # 6
 number_of_columns = 7  # 7
+number_of_played_pieces = 0
 is_first_player_turn = True
 table = [[0 for j in range(0, number_of_columns)] for i in range(0, number_of_rows)]
 
@@ -12,6 +12,10 @@ def get_current_player_index():
         return 1
     else:
         return 2
+
+
+def is_game_in_draw_state():
+    return number_of_played_pieces == number_of_columns * number_of_rows
 
 
 def is_move_valid(row, column):
@@ -25,7 +29,9 @@ def is_move_valid(row, column):
 def reset_game():
     global table
     global is_first_player_turn
+    global number_of_played_pieces
     is_first_player_turn = True
+    number_of_played_pieces = 0
     table = [[0 for _ in range(0, number_of_columns)] for _ in range(0, number_of_rows)]
 
 

@@ -1,10 +1,12 @@
 import game_logic as gl
-import graphics as g
+import game_page as g
+import random
 
 is_ai_first_player = False
-is_ai_playing = True
+is_ai_playing = False
 infinity = 10000
-original_depth = 5
+original_depth = 4
+difficulty = 2
 
 
 def print_table(table):
@@ -53,8 +55,20 @@ def get_available_moves_from_current_table(table):
 
             if row is not None:
                 moves_list.append((row, column))
+    else:
+        for offset in range(0, gl.number_of_columns // 2):
+            column = gl.number_of_columns // 2 - offset - 1
+            row = get_available_row_for_column(table, column)
 
-    # print("moves list: ", moves_list)
+            if row is not None:
+                moves_list.append((row, column))
+
+            column = gl.number_of_columns // 2 + offset
+            row = get_available_row_for_column(table, column)
+
+            if row is not None:
+                moves_list.append((row, column))
+
     return moves_list
 
 
@@ -152,6 +166,10 @@ def scan_for_instant_win(table):
 def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column):
     is_table_in_winning_position = gl.is_move_winner(last_row, last_column, table)[0]
 
+    # print(get_available_moves_from_current_table(table))
+    if is_table_filled(table) and is_table_in_winning_position == False:
+        return 0, None
+
     best_move = get_available_moves_from_current_table(table)[0]
     if depth == 0 or is_table_in_winning_position:
         output = evaluate_table(table, is_table_in_winning_position, maximizing_player, depth), best_move
@@ -196,7 +214,18 @@ def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column)
         return min_eval, best_move
 
 
-def predict_best_move():
+def pick_random_available_move():
+    moves = get_available_moves_from_current_table(gl.table)
+    return random.choice(moves)
+
+
+def make_a_move():
+    print(difficulty)
+    if difficulty == 0:
+        return pick_random_available_move()
+    elif difficulty == 1:
+        if random.choice([0, 1]) == 0:
+            return pick_random_available_move()
     return minimax(gl.table, original_depth, -infinity, +infinity, True, None, None)[1]
 
 

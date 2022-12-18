@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>game_page API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>game_page</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from tkinter import *
+
+import ai
+import game_logic as gl
+import menu
+
+# width and height of the window in pixels
+width = 900
+height = 900
+table_exterior_offset_x = 20  # space in pixels between window edge and table edge on X axis
+table_exterior_offset_y = 20  # space in pixels between window edge and table edge on Y axis
+
+table_interior_offset_x = 20  # space in pixels between table edge and first or last circle in a row
+table_interior_offset_y = 20  # space in pixels between table edge and first or last circle in a column
+
+space_between_circles_x = None  # space between circles on X axis
+space_between_circles_y = None  # space between circles on Y axis
+minim_space_between_circles_x = 20  # space_between_circles_x must be a minimum of this value, but it can also be a bigger value
+minim_space_between_circles_y = 20  # space_between_circles_y must be a minimum of this value, but it can also be a bigger value
+
+clickable = True
+
+background_color = &#34;#323232&#34;  # hex color code for the background
+table_color = &#34;#34AFDE&#34;  # hex color code for the table
+first_player_tile_color = &#34;#EB2316&#34;  # hex color code for first player&#39;s pieces (red)
+second_player_tile_color = &#34;#F5EE05&#34;  # hex color code for second player&#39;s pieces (yellow)
+
+first_player_unselected_tile_color = &#34;#8F2B24&#34;  # hex color code for first player&#39;s pieces position preview on table
+second_player_unselected_tile_color = &#34;#94901C&#34;  # hex color code for second player&#39;s pieces position preview on table
+
+cursor_position_x = None  # position of the cursor during the game
+hovered_column = None  # currently hovered column in table
+
+
+def initialize_game():
+    &#34;&#34;&#34;
+    Resets the game state, initializes table and empty circles and applies first AI move if necessary
+    &#34;&#34;&#34;
+    gl.reset_game()
+    round_rectangle(table_exterior_offset_x, table_exterior_offset_y, width - table_exterior_offset_x,
+                    height - table_exterior_offset_y, 25,
+                    fill=table_color)
+    initialize_circles()
+    if ai.is_ai_playing and ai.is_ai_first_player:
+        row, column = ai.make_a_move()
+        gl.number_of_played_pieces = gl.number_of_played_pieces + 1
+        circle_center_x, circle_center_y = convert_rows_and_columns_to_coordinates(row, column)
+
+        canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                           circle_center_x + circle_radius, circle_center_y + circle_radius,
+                           fill=get_color_for_player_turn())
+        gl.table[row][column] = gl.get_current_player_index()
+
+        gl.is_first_player_turn = not gl.is_first_player_turn
+
+    global clickable
+    clickable = True
+
+
+def menu_page():
+    &#34;&#34;&#34;
+    changes the game page with the main menu page
+    &#34;&#34;&#34;
+    root.destroy()
+    menu.main()
+
+
+def get_column_from_coordinates(x):
+    &#34;&#34;&#34;
+    Returns the column at coordinate x if there is one, otherwise returns None
+    :param x: the x coordinate on table
+    :return: Column index if x coordinate is above a column, None otherwise
+    &#34;&#34;&#34;
+    if x &lt; table_exterior_offset_x or x &gt; width - table_exterior_offset_x:
+        return None
+    elif x &gt; table_exterior_offset_x and x &lt; table_exterior_offset_x + table_interior_offset_x + 2 * circle_radius + space_between_circles_x // 2:
+        return 0
+    else:
+        column = (x - table_exterior_offset_x - table_interior_offset_x + space_between_circles_x // 2) // (
+                circle_radius * 2 + space_between_circles_x)
+        if column == -1 or column == gl.number_of_columns:
+            return None
+        else:
+            return int(column)
+
+
+def get_color_for_player_turn():
+    &#34;&#34;&#34;
+    Returns the color code for the player at turn
+    :return: hex color code for red for the first player and hex color code for yellow for the second player
+    &#34;&#34;&#34;
+    if gl.is_first_player_turn:
+        return first_player_tile_color
+    else:
+        return second_player_tile_color
+
+
+def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
+    &#34;&#34;&#34;
+    Draws a rectangle with rounded corners of selected radius on screen from the upper left and lower right point coordinates
+    :param x1: x coordinate of upper left point
+    :param y1: y coordinate of upper left point
+    :param x2: x coordinate of lower right point
+    :param y2: y coordinate of lower right point
+    :param radius: radius for the rounded corners
+    :param kwargs: key word arguments to be passed to create_polygon function of canvas
+    &#34;&#34;&#34;
+    points = [x1 + radius, y1,
+              x1 + radius, y1,
+              x2 - radius, y1,
+              x2 - radius, y1,
+              x2, y1,
+              x2, y1 + radius,
+              x2, y1 + radius,
+              x2, y2 - radius,
+              x2, y2 - radius,
+              x2, y2,
+              x2 - radius, y2,
+              x2 - radius, y2,
+              x1 + radius, y2,
+              x1 + radius, y2,
+              x1, y2,
+              x1, y2 - radius,
+              x1, y2 - radius,
+              x1, y1 + radius,
+              x1, y1 + radius,
+              x1, y1]
+
+    canvas.create_polygon(points, **kwargs, smooth=True)
+
+
+def get_closest_circle_center_coordinates(x, y):
+    &#34;&#34;&#34;
+    Returns the closest coordinates of a circle center on the table for the given coordinates
+    :param x: x coordinate
+    :param y: y coordinate
+    :return: a tuple with coordinates of the center of a circle on the table
+    &#34;&#34;&#34;
+    global space_between_circles_x
+    global space_between_circles_y
+    circle_center_x = table_exterior_offset_x + table_interior_offset_x + (
+            (x - table_exterior_offset_x - table_interior_offset_x) //
+            (2 * circle_radius + space_between_circles_x) + 1) * (2 * circle_radius + space_between_circles_x) \
+                      - space_between_circles_x - circle_radius
+
+    circle_center_y = table_exterior_offset_y + table_interior_offset_y + (
+            (y - table_exterior_offset_y - table_interior_offset_y) //
+            (2 * circle_radius + space_between_circles_y) + 1) * (2 * circle_radius + space_between_circles_y) \
+                      - space_between_circles_y - circle_radius
+
+    return circle_center_x, circle_center_y
+
+
+def convert_coordinates_to_rows_and_columns(x, y):
+    &#34;&#34;&#34;
+    Converts x and y coordinates of a circle center to the row and column in the table of that circle
+    :param x: x coordinate of circle center
+    :param y: y coordinate of circle center
+    :return: a tuple with the row and column of the circle with center at coordinates x and y in the table
+    &#34;&#34;&#34;
+    global space_between_circles_x
+    global space_between_circles_y
+    row = int(abs((table_exterior_offset_y + table_interior_offset_y + circle_radius - y) / (
+            circle_radius * 2 + space_between_circles_y)))
+    column = int(abs((table_exterior_offset_x + table_interior_offset_x + circle_radius - x) / (
+            circle_radius * 2 + space_between_circles_x)))
+    return row, column
+
+
+def convert_rows_and_columns_to_coordinates(row, column):
+    &#34;&#34;&#34;
+    Converts row and column of a circle in the table to the coordinates of it&#39;s center on that table
+    :param row: row that the circle is on
+    :param column: column that the circle is on
+    :return: a tuple with the x and y coordinates for the circle&#39;s center on the screen
+    &#34;&#34;&#34;
+    x_coordinate = table_exterior_offset_x + table_interior_offset_x + (
+            2 * circle_radius + space_between_circles_x) * column + circle_radius
+    y_coordinate = table_exterior_offset_y + table_interior_offset_y + (
+            2 * circle_radius + space_between_circles_y) * row + circle_radius
+    return x_coordinate, y_coordinate
+
+
+def draw_line(row1, column1, row2, column2):
+    &#34;&#34;&#34;
+    Draws a line connecting 4 pieces of the same color for determining how the game was won
+    :param row1: row where the first circle in the configuration of 4 circles is placed
+    :param column1: column where the first circle in the configuration of 4 circles is placed
+    :param row2: row where the last circle in the configuration of 4 circles is placed
+    :param column2: column where the last circle in the configuration of 4 circles is placed
+    &#34;&#34;&#34;
+    x1, y1 = convert_rows_and_columns_to_coordinates(row1, column1)
+    x2, y2 = convert_rows_and_columns_to_coordinates(row2, column2)
+    canvas.create_line(x1, y1, x2, y2, fill=&#34;green&#34;, width=5)
+
+
+def initialize_circles():
+    &#34;&#34;&#34;
+    Draws all the empty spaces for circles at the start of the game based on the number of rows and columns
+    &#34;&#34;&#34;
+    global minim_space_between_circles_x
+    global minim_space_between_circles_y
+    circle_cell_width = ((width - 2 * table_exterior_offset_x - 2 * table_interior_offset_x) - (
+            gl.number_of_columns - 1) * minim_space_between_circles_x) / gl.number_of_columns
+    circle_cell_height = ((height - 2 * table_exterior_offset_y - 2 * table_interior_offset_y) - (
+            gl.number_of_rows - 1) * minim_space_between_circles_y) / gl.number_of_rows
+    global circle_radius
+    circle_radius = min(circle_cell_height, circle_cell_width) / 2
+
+    global space_between_circles_x
+    global space_between_circles_y
+    space_between_circles_x = minim_space_between_circles_x + circle_cell_width - 2 * circle_radius
+    space_between_circles_y = minim_space_between_circles_y + circle_cell_height - 2 * circle_radius
+
+    global canvas
+    for row in range(0, gl.number_of_rows):
+        for column in range(0, gl.number_of_columns):
+            circle_center_x = table_exterior_offset_x + table_interior_offset_x + column * (
+                    circle_radius * 2 + space_between_circles_x) + circle_radius
+            circle_center_y = table_exterior_offset_y + table_interior_offset_y + row * (
+                    circle_radius * 2 + space_between_circles_y) + circle_radius
+            canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                               circle_center_x + circle_radius, circle_center_y + circle_radius, fill=background_color,
+                               tags=&#34;empty_circle&#34;)
+
+
+def mouse_tracking(event):
+    &#34;&#34;&#34;
+    Keeps track of cursor position on window.
+
+    Updates the hovered column so that it can display a preview of the position a certain piece is going to land in
+    depending on the hovered column
+    :param event: tkinter event useful for monitoring the position of the cursor on the X axis
+    &#34;&#34;&#34;
+    global cursor_position_x
+    global hovered_column
+    cursor_position_x = event.x
+    column = get_column_from_coordinates(cursor_position_x)
+
+    if column is not None:
+
+        if column != hovered_column:
+
+            if hovered_column is not None:
+                row = ai.get_available_row_for_column(gl.table, hovered_column)
+
+                if row is not None:
+                    coordinate_of_column, coordinate_of_row = convert_rows_and_columns_to_coordinates(row,
+                                                                                                      hovered_column)
+                    circle_center_x, circle_center_y = get_closest_circle_center_coordinates(coordinate_of_column,
+                                                                                             coordinate_of_row)
+
+                    canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                                       circle_center_x + circle_radius, circle_center_y + circle_radius,
+                                       fill=background_color)
+
+            hovered_column = column
+
+            row = ai.get_available_row_for_column(gl.table, column)
+            if row is not None:
+                coordinate_of_column, coordinate_of_row = convert_rows_and_columns_to_coordinates(row, column)
+                circle_center_x, circle_center_y = get_closest_circle_center_coordinates(coordinate_of_column,
+                                                                                         coordinate_of_row)
+
+                if gl.is_first_player_turn:
+                    canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                                       circle_center_x + circle_radius, circle_center_y + circle_radius,
+                                       fill=first_player_unselected_tile_color)
+                else:
+                    canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                                       circle_center_x + circle_radius, circle_center_y + circle_radius,
+                                       fill=second_player_unselected_tile_color)
+
+
+def canvas_clicked(event):
+    &#34;&#34;&#34;
+    Handles the event in which a user clicks on the table to select a move.
+
+    It can draw the selected move on screen and respond with a move generated by the AI if necessary or simply change
+    the player&#39;s turn in case of a human adversary
+    :param event: tkinter event not particularly useful, but required to exist for successfully binding the function to
+    the canvas
+    &#34;&#34;&#34;
+    global clickable
+    global hovered_column
+
+    if clickable:
+        row = ai.get_available_row_for_column(gl.table, hovered_column)
+
+        if row is not None:
+            gl.number_of_played_pieces = gl.number_of_played_pieces + 1
+            column = hovered_column
+
+            coordinate_of_column, coordinate_of_row = convert_rows_and_columns_to_coordinates(
+                ai.get_available_row_for_column(gl.table, hovered_column), hovered_column)
+            circle_center_x, circle_center_y = get_closest_circle_center_coordinates(coordinate_of_column,
+                                                                                     coordinate_of_row)
+
+            canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                               circle_center_x + circle_radius, circle_center_y + circle_radius,
+                               fill=get_color_for_player_turn())
+
+            gl.table[row][column] = gl.get_current_player_index()
+
+            is_move_winner_output = gl.is_move_winner(row, column, gl.table)
+            if is_move_winner_output[0]:
+                print(&#34;Player&#34;, gl.get_current_player_index(), &#34;won!&#34;)
+                draw_line(is_move_winner_output[1][0][0], is_move_winner_output[1][0][1],
+                          is_move_winner_output[1][1][0],
+                          is_move_winner_output[1][1][1])
+
+                clickable = False
+                canvas.after(3000, menu_page)
+
+            elif gl.is_game_in_draw_state():
+                clickable = False
+                canvas.after(3000, menu_page)
+
+            else:
+                gl.is_first_player_turn = not gl.is_first_player_turn
+                if ai.is_ai_playing:
+                    row, column = ai.make_a_move()
+                    gl.number_of_played_pieces = gl.number_of_played_pieces + 1
+                    circle_center_x, circle_center_y = convert_rows_and_columns_to_coordinates(row, column)
+
+                    canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                                       circle_center_x + circle_radius, circle_center_y + circle_radius,
+                                       fill=get_color_for_player_turn())
+                    gl.table[row][column] = gl.get_current_player_index()
+
+                    is_move_winner_output = gl.is_move_winner(row, column, gl.table)
+                    if is_move_winner_output[0]:
+                        print(&#34;Player&#34;, gl.get_current_player_index(), &#34;won!&#34;)
+                        draw_line(is_move_winner_output[1][0][0], is_move_winner_output[1][0][1],
+                                  is_move_winner_output[1][1][0], is_move_winner_output[1][1][1])
+
+                        clickable = False
+                        canvas.after(3000, menu_page)
+
+                    elif gl.is_game_in_draw_state():
+                        clickable = False
+                        canvas.after(3000, menu_page)
+
+                    else:
+                        gl.is_first_player_turn = not gl.is_first_player_turn
+
+
+def main():
+    &#34;&#34;&#34;
+    Main starting point for the game page.
+    &#34;&#34;&#34;
+    global root
+    root = Tk()
+    root.title(&#34;4 in a row&#34;)
+    global canvas
+    canvas = Canvas(root, width=width, height=height, bg=background_color)
+
+    canvas.bind(&#34;&lt;Button-1&gt;&#34;, canvas_clicked)
+    canvas.pack()
+    initialize_game()
+
+    root.bind(&#39;&lt;Motion&gt;&#39;, mouse_tracking)
+    root.mainloop()
+
+
+if __name__ == &#39;__main__&#39;:
+    main()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="game_page.canvas_clicked"><code class="name flex">
+<span>def <span class="ident">canvas_clicked</span></span>(<span>event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Handles the event in which a user clicks on the table to select a move.</p>
+<p>It can draw the selected move on screen and respond with a move generated by the AI if necessary or simply change
+the player's turn in case of a human adversary
+:param event: tkinter event not particularly useful, but required to exist for successfully binding the function to
+the canvas</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def canvas_clicked(event):
+    &#34;&#34;&#34;
+    Handles the event in which a user clicks on the table to select a move.
+
+    It can draw the selected move on screen and respond with a move generated by the AI if necessary or simply change
+    the player&#39;s turn in case of a human adversary
+    :param event: tkinter event not particularly useful, but required to exist for successfully binding the function to
+    the canvas
+    &#34;&#34;&#34;
+    global clickable
+    global hovered_column
+
+    if clickable:
+        row = ai.get_available_row_for_column(gl.table, hovered_column)
+
+        if row is not None:
+            gl.number_of_played_pieces = gl.number_of_played_pieces + 1
+            column = hovered_column
+
+            coordinate_of_column, coordinate_of_row = convert_rows_and_columns_to_coordinates(
+                ai.get_available_row_for_column(gl.table, hovered_column), hovered_column)
+            circle_center_x, circle_center_y = get_closest_circle_center_coordinates(coordinate_of_column,
+                                                                                     coordinate_of_row)
+
+            canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                               circle_center_x + circle_radius, circle_center_y + circle_radius,
+                               fill=get_color_for_player_turn())
+
+            gl.table[row][column] = gl.get_current_player_index()
+
+            is_move_winner_output = gl.is_move_winner(row, column, gl.table)
+            if is_move_winner_output[0]:
+                print(&#34;Player&#34;, gl.get_current_player_index(), &#34;won!&#34;)
+                draw_line(is_move_winner_output[1][0][0], is_move_winner_output[1][0][1],
+                          is_move_winner_output[1][1][0],
+                          is_move_winner_output[1][1][1])
+
+                clickable = False
+                canvas.after(3000, menu_page)
+
+            elif gl.is_game_in_draw_state():
+                clickable = False
+                canvas.after(3000, menu_page)
+
+            else:
+                gl.is_first_player_turn = not gl.is_first_player_turn
+                if ai.is_ai_playing:
+                    row, column = ai.make_a_move()
+                    gl.number_of_played_pieces = gl.number_of_played_pieces + 1
+                    circle_center_x, circle_center_y = convert_rows_and_columns_to_coordinates(row, column)
+
+                    canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                                       circle_center_x + circle_radius, circle_center_y + circle_radius,
+                                       fill=get_color_for_player_turn())
+                    gl.table[row][column] = gl.get_current_player_index()
+
+                    is_move_winner_output = gl.is_move_winner(row, column, gl.table)
+                    if is_move_winner_output[0]:
+                        print(&#34;Player&#34;, gl.get_current_player_index(), &#34;won!&#34;)
+                        draw_line(is_move_winner_output[1][0][0], is_move_winner_output[1][0][1],
+                                  is_move_winner_output[1][1][0], is_move_winner_output[1][1][1])
+
+                        clickable = False
+                        canvas.after(3000, menu_page)
+
+                    elif gl.is_game_in_draw_state():
+                        clickable = False
+                        canvas.after(3000, menu_page)
+
+                    else:
+                        gl.is_first_player_turn = not gl.is_first_player_turn</code></pre>
+</details>
+</dd>
+<dt id="game_page.convert_coordinates_to_rows_and_columns"><code class="name flex">
+<span>def <span class="ident">convert_coordinates_to_rows_and_columns</span></span>(<span>x, y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts x and y coordinates of a circle center to the row and column in the table of that circle
+:param x: x coordinate of circle center
+:param y: y coordinate of circle center
+:return: a tuple with the row and column of the circle with center at coordinates x and y in the table</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def convert_coordinates_to_rows_and_columns(x, y):
+    &#34;&#34;&#34;
+    Converts x and y coordinates of a circle center to the row and column in the table of that circle
+    :param x: x coordinate of circle center
+    :param y: y coordinate of circle center
+    :return: a tuple with the row and column of the circle with center at coordinates x and y in the table
+    &#34;&#34;&#34;
+    global space_between_circles_x
+    global space_between_circles_y
+    row = int(abs((table_exterior_offset_y + table_interior_offset_y + circle_radius - y) / (
+            circle_radius * 2 + space_between_circles_y)))
+    column = int(abs((table_exterior_offset_x + table_interior_offset_x + circle_radius - x) / (
+            circle_radius * 2 + space_between_circles_x)))
+    return row, column</code></pre>
+</details>
+</dd>
+<dt id="game_page.convert_rows_and_columns_to_coordinates"><code class="name flex">
+<span>def <span class="ident">convert_rows_and_columns_to_coordinates</span></span>(<span>row, column)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Converts row and column of a circle in the table to the coordinates of it's center on that table
+:param row: row that the circle is on
+:param column: column that the circle is on
+:return: a tuple with the x and y coordinates for the circle's center on the screen</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def convert_rows_and_columns_to_coordinates(row, column):
+    &#34;&#34;&#34;
+    Converts row and column of a circle in the table to the coordinates of it&#39;s center on that table
+    :param row: row that the circle is on
+    :param column: column that the circle is on
+    :return: a tuple with the x and y coordinates for the circle&#39;s center on the screen
+    &#34;&#34;&#34;
+    x_coordinate = table_exterior_offset_x + table_interior_offset_x + (
+            2 * circle_radius + space_between_circles_x) * column + circle_radius
+    y_coordinate = table_exterior_offset_y + table_interior_offset_y + (
+            2 * circle_radius + space_between_circles_y) * row + circle_radius
+    return x_coordinate, y_coordinate</code></pre>
+</details>
+</dd>
+<dt id="game_page.draw_line"><code class="name flex">
+<span>def <span class="ident">draw_line</span></span>(<span>row1, column1, row2, column2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draws a line connecting 4 pieces of the same color for determining how the game was won
+:param row1: row where the first circle in the configuration of 4 circles is placed
+:param column1: column where the first circle in the configuration of 4 circles is placed
+:param row2: row where the last circle in the configuration of 4 circles is placed
+:param column2: column where the last circle in the configuration of 4 circles is placed</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_line(row1, column1, row2, column2):
+    &#34;&#34;&#34;
+    Draws a line connecting 4 pieces of the same color for determining how the game was won
+    :param row1: row where the first circle in the configuration of 4 circles is placed
+    :param column1: column where the first circle in the configuration of 4 circles is placed
+    :param row2: row where the last circle in the configuration of 4 circles is placed
+    :param column2: column where the last circle in the configuration of 4 circles is placed
+    &#34;&#34;&#34;
+    x1, y1 = convert_rows_and_columns_to_coordinates(row1, column1)
+    x2, y2 = convert_rows_and_columns_to_coordinates(row2, column2)
+    canvas.create_line(x1, y1, x2, y2, fill=&#34;green&#34;, width=5)</code></pre>
+</details>
+</dd>
+<dt id="game_page.get_closest_circle_center_coordinates"><code class="name flex">
+<span>def <span class="ident">get_closest_circle_center_coordinates</span></span>(<span>x, y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the closest coordinates of a circle center on the table for the given coordinates
+:param x: x coordinate
+:param y: y coordinate
+:return: a tuple with coordinates of the center of a circle on the table</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_closest_circle_center_coordinates(x, y):
+    &#34;&#34;&#34;
+    Returns the closest coordinates of a circle center on the table for the given coordinates
+    :param x: x coordinate
+    :param y: y coordinate
+    :return: a tuple with coordinates of the center of a circle on the table
+    &#34;&#34;&#34;
+    global space_between_circles_x
+    global space_between_circles_y
+    circle_center_x = table_exterior_offset_x + table_interior_offset_x + (
+            (x - table_exterior_offset_x - table_interior_offset_x) //
+            (2 * circle_radius + space_between_circles_x) + 1) * (2 * circle_radius + space_between_circles_x) \
+                      - space_between_circles_x - circle_radius
+
+    circle_center_y = table_exterior_offset_y + table_interior_offset_y + (
+            (y - table_exterior_offset_y - table_interior_offset_y) //
+            (2 * circle_radius + space_between_circles_y) + 1) * (2 * circle_radius + space_between_circles_y) \
+                      - space_between_circles_y - circle_radius
+
+    return circle_center_x, circle_center_y</code></pre>
+</details>
+</dd>
+<dt id="game_page.get_color_for_player_turn"><code class="name flex">
+<span>def <span class="ident">get_color_for_player_turn</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the color code for the player at turn
+:return: hex color code for red for the first player and hex color code for yellow for the second player</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_color_for_player_turn():
+    &#34;&#34;&#34;
+    Returns the color code for the player at turn
+    :return: hex color code for red for the first player and hex color code for yellow for the second player
+    &#34;&#34;&#34;
+    if gl.is_first_player_turn:
+        return first_player_tile_color
+    else:
+        return second_player_tile_color</code></pre>
+</details>
+</dd>
+<dt id="game_page.get_column_from_coordinates"><code class="name flex">
+<span>def <span class="ident">get_column_from_coordinates</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the column at coordinate x if there is one, otherwise returns None
+:param x: the x coordinate on table
+:return: Column index if x coordinate is above a column, None otherwise</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_column_from_coordinates(x):
+    &#34;&#34;&#34;
+    Returns the column at coordinate x if there is one, otherwise returns None
+    :param x: the x coordinate on table
+    :return: Column index if x coordinate is above a column, None otherwise
+    &#34;&#34;&#34;
+    if x &lt; table_exterior_offset_x or x &gt; width - table_exterior_offset_x:
+        return None
+    elif x &gt; table_exterior_offset_x and x &lt; table_exterior_offset_x + table_interior_offset_x + 2 * circle_radius + space_between_circles_x // 2:
+        return 0
+    else:
+        column = (x - table_exterior_offset_x - table_interior_offset_x + space_between_circles_x // 2) // (
+                circle_radius * 2 + space_between_circles_x)
+        if column == -1 or column == gl.number_of_columns:
+            return None
+        else:
+            return int(column)</code></pre>
+</details>
+</dd>
+<dt id="game_page.initialize_circles"><code class="name flex">
+<span>def <span class="ident">initialize_circles</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draws all the empty spaces for circles at the start of the game based on the number of rows and columns</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialize_circles():
+    &#34;&#34;&#34;
+    Draws all the empty spaces for circles at the start of the game based on the number of rows and columns
+    &#34;&#34;&#34;
+    global minim_space_between_circles_x
+    global minim_space_between_circles_y
+    circle_cell_width = ((width - 2 * table_exterior_offset_x - 2 * table_interior_offset_x) - (
+            gl.number_of_columns - 1) * minim_space_between_circles_x) / gl.number_of_columns
+    circle_cell_height = ((height - 2 * table_exterior_offset_y - 2 * table_interior_offset_y) - (
+            gl.number_of_rows - 1) * minim_space_between_circles_y) / gl.number_of_rows
+    global circle_radius
+    circle_radius = min(circle_cell_height, circle_cell_width) / 2
+
+    global space_between_circles_x
+    global space_between_circles_y
+    space_between_circles_x = minim_space_between_circles_x + circle_cell_width - 2 * circle_radius
+    space_between_circles_y = minim_space_between_circles_y + circle_cell_height - 2 * circle_radius
+
+    global canvas
+    for row in range(0, gl.number_of_rows):
+        for column in range(0, gl.number_of_columns):
+            circle_center_x = table_exterior_offset_x + table_interior_offset_x + column * (
+                    circle_radius * 2 + space_between_circles_x) + circle_radius
+            circle_center_y = table_exterior_offset_y + table_interior_offset_y + row * (
+                    circle_radius * 2 + space_between_circles_y) + circle_radius
+            canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                               circle_center_x + circle_radius, circle_center_y + circle_radius, fill=background_color,
+                               tags=&#34;empty_circle&#34;)</code></pre>
+</details>
+</dd>
+<dt id="game_page.initialize_game"><code class="name flex">
+<span>def <span class="ident">initialize_game</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resets the game state, initializes table and empty circles and applies first AI move if necessary</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialize_game():
+    &#34;&#34;&#34;
+    Resets the game state, initializes table and empty circles and applies first AI move if necessary
+    &#34;&#34;&#34;
+    gl.reset_game()
+    round_rectangle(table_exterior_offset_x, table_exterior_offset_y, width - table_exterior_offset_x,
+                    height - table_exterior_offset_y, 25,
+                    fill=table_color)
+    initialize_circles()
+    if ai.is_ai_playing and ai.is_ai_first_player:
+        row, column = ai.make_a_move()
+        gl.number_of_played_pieces = gl.number_of_played_pieces + 1
+        circle_center_x, circle_center_y = convert_rows_and_columns_to_coordinates(row, column)
+
+        canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                           circle_center_x + circle_radius, circle_center_y + circle_radius,
+                           fill=get_color_for_player_turn())
+        gl.table[row][column] = gl.get_current_player_index()
+
+        gl.is_first_player_turn = not gl.is_first_player_turn
+
+    global clickable
+    clickable = True</code></pre>
+</details>
+</dd>
+<dt id="game_page.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main starting point for the game page.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main():
+    &#34;&#34;&#34;
+    Main starting point for the game page.
+    &#34;&#34;&#34;
+    global root
+    root = Tk()
+    root.title(&#34;4 in a row&#34;)
+    global canvas
+    canvas = Canvas(root, width=width, height=height, bg=background_color)
+
+    canvas.bind(&#34;&lt;Button-1&gt;&#34;, canvas_clicked)
+    canvas.pack()
+    initialize_game()
+
+    root.bind(&#39;&lt;Motion&gt;&#39;, mouse_tracking)
+    root.mainloop()</code></pre>
+</details>
+</dd>
+<dt id="game_page.menu_page"><code class="name flex">
+<span>def <span class="ident">menu_page</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>changes the game page with the main menu page</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def menu_page():
+    &#34;&#34;&#34;
+    changes the game page with the main menu page
+    &#34;&#34;&#34;
+    root.destroy()
+    menu.main()</code></pre>
+</details>
+</dd>
+<dt id="game_page.mouse_tracking"><code class="name flex">
+<span>def <span class="ident">mouse_tracking</span></span>(<span>event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Keeps track of cursor position on window.</p>
+<p>Updates the hovered column so that it can display a preview of the position a certain piece is going to land in
+depending on the hovered column
+:param event: tkinter event useful for monitoring the position of the cursor on the X axis</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mouse_tracking(event):
+    &#34;&#34;&#34;
+    Keeps track of cursor position on window.
+
+    Updates the hovered column so that it can display a preview of the position a certain piece is going to land in
+    depending on the hovered column
+    :param event: tkinter event useful for monitoring the position of the cursor on the X axis
+    &#34;&#34;&#34;
+    global cursor_position_x
+    global hovered_column
+    cursor_position_x = event.x
+    column = get_column_from_coordinates(cursor_position_x)
+
+    if column is not None:
+
+        if column != hovered_column:
+
+            if hovered_column is not None:
+                row = ai.get_available_row_for_column(gl.table, hovered_column)
+
+                if row is not None:
+                    coordinate_of_column, coordinate_of_row = convert_rows_and_columns_to_coordinates(row,
+                                                                                                      hovered_column)
+                    circle_center_x, circle_center_y = get_closest_circle_center_coordinates(coordinate_of_column,
+                                                                                             coordinate_of_row)
+
+                    canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                                       circle_center_x + circle_radius, circle_center_y + circle_radius,
+                                       fill=background_color)
+
+            hovered_column = column
+
+            row = ai.get_available_row_for_column(gl.table, column)
+            if row is not None:
+                coordinate_of_column, coordinate_of_row = convert_rows_and_columns_to_coordinates(row, column)
+                circle_center_x, circle_center_y = get_closest_circle_center_coordinates(coordinate_of_column,
+                                                                                         coordinate_of_row)
+
+                if gl.is_first_player_turn:
+                    canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                                       circle_center_x + circle_radius, circle_center_y + circle_radius,
+                                       fill=first_player_unselected_tile_color)
+                else:
+                    canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
+                                       circle_center_x + circle_radius, circle_center_y + circle_radius,
+                                       fill=second_player_unselected_tile_color)</code></pre>
+</details>
+</dd>
+<dt id="game_page.round_rectangle"><code class="name flex">
+<span>def <span class="ident">round_rectangle</span></span>(<span>x1, y1, x2, y2, radius=25, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draws a rectangle with rounded corners of selected radius on screen from the upper left and lower right point coordinates
+:param x1: x coordinate of upper left point
+:param y1: y coordinate of upper left point
+:param x2: x coordinate of lower right point
+:param y2: y coordinate of lower right point
+:param radius: radius for the rounded corners
+:param kwargs: key word arguments to be passed to create_polygon function of canvas</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
+    &#34;&#34;&#34;
+    Draws a rectangle with rounded corners of selected radius on screen from the upper left and lower right point coordinates
+    :param x1: x coordinate of upper left point
+    :param y1: y coordinate of upper left point
+    :param x2: x coordinate of lower right point
+    :param y2: y coordinate of lower right point
+    :param radius: radius for the rounded corners
+    :param kwargs: key word arguments to be passed to create_polygon function of canvas
+    &#34;&#34;&#34;
+    points = [x1 + radius, y1,
+              x1 + radius, y1,
+              x2 - radius, y1,
+              x2 - radius, y1,
+              x2, y1,
+              x2, y1 + radius,
+              x2, y1 + radius,
+              x2, y2 - radius,
+              x2, y2 - radius,
+              x2, y2,
+              x2 - radius, y2,
+              x2 - radius, y2,
+              x1 + radius, y2,
+              x1 + radius, y2,
+              x1, y2,
+              x1, y2 - radius,
+              x1, y2 - radius,
+              x1, y1 + radius,
+              x1, y1 + radius,
+              x1, y1]
+
+    canvas.create_polygon(points, **kwargs, smooth=True)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="game_page.canvas_clicked" href="#game_page.canvas_clicked">canvas_clicked</a></code></li>
+<li><code><a title="game_page.convert_coordinates_to_rows_and_columns" href="#game_page.convert_coordinates_to_rows_and_columns">convert_coordinates_to_rows_and_columns</a></code></li>
+<li><code><a title="game_page.convert_rows_and_columns_to_coordinates" href="#game_page.convert_rows_and_columns_to_coordinates">convert_rows_and_columns_to_coordinates</a></code></li>
+<li><code><a title="game_page.draw_line" href="#game_page.draw_line">draw_line</a></code></li>
+<li><code><a title="game_page.get_closest_circle_center_coordinates" href="#game_page.get_closest_circle_center_coordinates">get_closest_circle_center_coordinates</a></code></li>
+<li><code><a title="game_page.get_color_for_player_turn" href="#game_page.get_color_for_player_turn">get_color_for_player_turn</a></code></li>
+<li><code><a title="game_page.get_column_from_coordinates" href="#game_page.get_column_from_coordinates">get_column_from_coordinates</a></code></li>
+<li><code><a title="game_page.initialize_circles" href="#game_page.initialize_circles">initialize_circles</a></code></li>
+<li><code><a title="game_page.initialize_game" href="#game_page.initialize_game">initialize_game</a></code></li>
+<li><code><a title="game_page.main" href="#game_page.main">main</a></code></li>
+<li><code><a title="game_page.menu_page" href="#game_page.menu_page">menu_page</a></code></li>
+<li><code><a title="game_page.mouse_tracking" href="#game_page.mouse_tracking">mouse_tracking</a></code></li>
+<li><code><a title="game_page.round_rectangle" href="#game_page.round_rectangle">round_rectangle</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -8,6 +8,10 @@ table = [[0 for j in range(0, number_of_columns)] for i in range(0, number_of_ro
 
 
 def get_current_player_index():
+    """
+    Gives the index of the current player
+    :return: 1 if it is the turn of the first player and 2 if it is the turn of the second player
+    """
     if is_first_player_turn:
         return 1
     else:
@@ -15,10 +19,20 @@ def get_current_player_index():
 
 
 def is_game_in_draw_state():
+    """
+    Check if the game is in draw state
+    :return: True if the game is in draw state, false otherwise
+    """
     return number_of_played_pieces == number_of_columns * number_of_rows
 
 
 def is_move_valid(row, column):
+    """
+    Checks if a move is valid
+    :param row: row to make move in
+    :param column: column to make move in
+    :return: True if the move is valid, False otherwise
+    """
     if table[row][column] != 0:
         return False
 
@@ -27,6 +41,9 @@ def is_move_valid(row, column):
 
 
 def reset_game():
+    """
+    Resets the internal state of the game
+    """
     global table
     global is_first_player_turn
     global number_of_played_pieces
@@ -36,6 +53,14 @@ def reset_game():
 
 
 def check_main_diagonal(row, column, some_table):
+    """
+    Checks if a piece placed at specified row and column connects to other consecutive pieces on main diagonal
+    :param row: specified row for placed piece
+    :param column: specified column for placed piece
+    :param some_table: table to check win on main diagonal condition in
+    :return: True, and coordinates necessary to draw line on the 4 connected pieces if move results in win,
+    False, None otherwise
+    """
     # main diagonal
     superior_limit = max(max(-3, -row), -column)
     inferior_limit = min(min(3, number_of_rows - row - 1), number_of_columns - column - 1)
@@ -56,6 +81,14 @@ def check_main_diagonal(row, column, some_table):
 
 
 def check_secondary_diagonal(row, column, some_table):
+    """
+    Checks if a piece placed at specified row and column connects to other consecutive pieces on secondary diagonal
+    :param row: specified row for placed piece
+    :param column: specified column for placed piece
+    :param some_table: table to check win on secondary diagonal condition in
+    :return: True, and coordinates necessary to draw line on the 4 connected pieces if move results in win,
+    False, None otherwise
+    """
     # secondary diagonal
     superior_limit = max(max(-3, -row), -(number_of_columns - column - 1))
     inferior_limit = min(min(3, number_of_rows - row - 1), column)
@@ -76,6 +109,14 @@ def check_secondary_diagonal(row, column, some_table):
 
 
 def check_horizontal_line(row, column, some_table):
+    """
+    Checks if a piece placed at specified row and column connects to other consecutive pieces on horizontal line
+    :param row: specified row for placed piece
+    :param column: specified column for placed piece
+    :param some_table: table to check win on horizontal condition in
+    :return: True, and coordinates necessary to draw line on the 4 connected pieces if move results in win,
+    False, None otherwise
+    """
     left_limit = max(-3, -column)
     right_limit = min(3, number_of_columns - column - 1)
     if abs(left_limit) + abs(right_limit) + 1 >= 4:
@@ -95,6 +136,14 @@ def check_horizontal_line(row, column, some_table):
 
 
 def is_move_winner(row, column, some_table):
+    """
+    Checks if a piece placed at specified row and column connects to other consecutive pieces on any direction
+    :param row: specified row for placed piece
+    :param column: specified column for placed piece
+    :param some_table: table to check win conditions in
+    :return: True, and coordinates necessary to draw line on the 4 connected pieces if move results in win,
+    False, None otherwise
+    """
     if row is None or column is None:
         return False, None
 

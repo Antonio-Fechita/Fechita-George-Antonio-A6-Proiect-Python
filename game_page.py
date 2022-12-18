@@ -15,8 +15,8 @@ table_interior_offset_y = 20  # space in pixels between table edge and first or 
 
 space_between_circles_x = None  # space between circles on X axis
 space_between_circles_y = None  # space between circles on Y axis
-minim_space_between_circles_x = 20  # space_between_circles_x must be a minimum of this value but it can also be a bigger value
-minim_space_between_circles_y = 20  # space_between_circles_y must be a minimum of this value but it can also be a bigger value
+minim_space_between_circles_x = 20  # space_between_circles_x must be a minimum of this value, but it can also be a bigger value
+minim_space_between_circles_y = 20  # space_between_circles_y must be a minimum of this value, but it can also be a bigger value
 
 clickable = True
 
@@ -34,7 +34,7 @@ hovered_column = None  # currently hovered column in table
 
 def initialize_game():
     """
-
+    Resets the game state, initializes table and empty circles and applies first AI move if necessary
     """
     gl.reset_game()
     round_rectangle(table_exterior_offset_x, table_exterior_offset_y, width - table_exterior_offset_x,
@@ -96,6 +96,15 @@ def get_color_for_player_turn():
 
 
 def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
+    """
+    Draws a rectangle with rounded corners of selected radius on screen from the upper left and lower right point coordinates
+    :param x1: x coordinate of upper left point
+    :param y1: y coordinate of upper left point
+    :param x2: x coordinate of lower right point
+    :param y2: y coordinate of lower right point
+    :param radius: radius for the rounded corners
+    :param kwargs: key word arguments to be passed to create_polygon function of canvas
+    """
     points = [x1 + radius, y1,
               x1 + radius, y1,
               x2 - radius, y1,
@@ -121,6 +130,12 @@ def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
 
 
 def get_closest_circle_center_coordinates(x, y):
+    """
+    Returns the closest coordinates of a circle center on the table for the given coordinates
+    :param x: x coordinate
+    :param y: y coordinate
+    :return: a tuple with coordinates of the center of a circle on the table
+    """
     global space_between_circles_x
     global space_between_circles_y
     circle_center_x = table_exterior_offset_x + table_interior_offset_x + (
@@ -137,6 +152,12 @@ def get_closest_circle_center_coordinates(x, y):
 
 
 def convert_coordinates_to_rows_and_columns(x, y):
+    """
+    Converts x and y coordinates of a circle center to the row and column in the table of that circle
+    :param x: x coordinate of circle center
+    :param y: y coordinate of circle center
+    :return: a tuple with the row and column of the circle with center at coordinates x and y in the table
+    """
     global space_between_circles_x
     global space_between_circles_y
     row = int(abs((table_exterior_offset_y + table_interior_offset_y + circle_radius - y) / (
@@ -147,6 +168,12 @@ def convert_coordinates_to_rows_and_columns(x, y):
 
 
 def convert_rows_and_columns_to_coordinates(row, column):
+    """
+    Converts row and column of a circle in the table to the coordinates of it's center on that table
+    :param row: row that the circle is on
+    :param column: column that the circle is on
+    :return: a tuple with the x and y coordinates for the circle's center on the screen
+    """
     x_coordinate = table_exterior_offset_x + table_interior_offset_x + (
             2 * circle_radius + space_between_circles_x) * column + circle_radius
     y_coordinate = table_exterior_offset_y + table_interior_offset_y + (
@@ -155,12 +182,22 @@ def convert_rows_and_columns_to_coordinates(row, column):
 
 
 def draw_line(row1, column1, row2, column2):
+    """
+    Draws a line connecting 4 pieces of the same color for determining how the game was won
+    :param row1: row where the first circle in the configuration of 4 circles is placed
+    :param column1: column where the first circle in the configuration of 4 circles is placed
+    :param row2: row where the last circle in the configuration of 4 circles is placed
+    :param column2: column where the last circle in the configuration of 4 circles is placed
+    """
     x1, y1 = convert_rows_and_columns_to_coordinates(row1, column1)
     x2, y2 = convert_rows_and_columns_to_coordinates(row2, column2)
     canvas.create_line(x1, y1, x2, y2, fill="green", width=5)
 
 
 def initialize_circles():
+    """
+    Draws all the empty spaces for circles at the start of the game based on the number of rows and columns
+    """
     global minim_space_between_circles_x
     global minim_space_between_circles_y
     circle_cell_width = ((width - 2 * table_exterior_offset_x - 2 * table_interior_offset_x) - (
@@ -185,10 +222,16 @@ def initialize_circles():
             canvas.create_oval(circle_center_x - circle_radius, circle_center_y - circle_radius,
                                circle_center_x + circle_radius, circle_center_y + circle_radius, fill=background_color,
                                tags="empty_circle")
-    # canvas.tag_bind("empty_circle", "<Button-1>", clicked)
 
 
 def mouse_tracking(event):
+    """
+    Keeps track of cursor position on window.
+
+    Updates the hovered column so that it can display a preview of the position a certain piece is going to land in
+    depending on the hovered column
+    :param event: tkinter event useful for monitoring the position of the cursor on the X axis
+    """
     global cursor_position_x
     global hovered_column
     cursor_position_x = event.x
@@ -230,6 +273,14 @@ def mouse_tracking(event):
 
 
 def canvas_clicked(event):
+    """
+    Handles the event in which a user clicks on the table to select a move.
+
+    It can draw the selected move on screen and respond with a move generated by the AI if necessary or simply change
+    the player's turn in case of a human adversary
+    :param event: tkinter event not particularly useful, but required to exist for successfully binding the function to
+    the canvas
+    """
     global clickable
     global hovered_column
 
@@ -295,6 +346,9 @@ def canvas_clicked(event):
 
 
 def main():
+    """
+    Main starting point for the game page.
+    """
     global root
     root = Tk()
     root.title("4 in a row")

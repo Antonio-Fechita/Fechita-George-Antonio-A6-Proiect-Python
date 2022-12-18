@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>ai API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ai</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import game_logic as gl
+import game_page as g
+import random
+
+is_ai_first_player = False  # if it is False the human player will be the first player
+is_ai_playing = False  # if it is false the adversary will be another human player
+infinity = 10000
+max_depth = 4  # the maximum depth of recursive calls for the minimax algorithm
+difficulty = 2  # the difficulty selected for the AI
+
+
+def get_available_row_for_column(table, column):
+    &#34;&#34;&#34;
+    Finds the playable row position for a specific column in a specific table configuration if the column is not already
+     filled
+    :param table: table to search row position for
+    :param column: column in specified table to search row position for
+    :return: row index if the column is not filled with pieces, None otherwise
+    &#34;&#34;&#34;
+    for row in range(len(table) - 1, -1, -1):
+        if table[row][column] == 0:
+            return row
+    return None
+
+
+def get_table_with_added_move(table, row, column, maximizing_player):
+    &#34;&#34;&#34;
+    Receives a table and returns that table with a new piece added to it at specified row and column
+    :param table: table to add piece to
+    :param row: row to add piece in
+    :param column: column to add piece in
+    :param maximizing_player: whether the current playing is the AI or the human
+    :return: table with added piece at specified location
+    &#34;&#34;&#34;
+    new_table = [row[:] for row in table]  # copies the original table in the new table
+
+    if (maximizing_player and is_ai_first_player) or (not maximizing_player and not is_ai_first_player):
+        player_piece = 1
+    else:
+        player_piece = 2
+
+    new_table[row][column] = player_piece
+
+    return new_table
+
+
+def get_available_moves_from_current_table(table):
+    &#34;&#34;&#34;
+    Computes a list of all the available moves in a specified table sorted by how close their position are to the center
+    column(s) as those positions are usually better than others
+    :param table: table to look for available moves in
+    :return: a list of all the available moves sorted by their distance to the center column(s)
+    &#34;&#34;&#34;
+    moves_list = []
+
+    if gl.number_of_columns % 2 == 1:
+        column = gl.number_of_columns // 2
+        row = get_available_row_for_column(table, column)
+
+        if row is not None:
+            moves_list.append((row, column))
+        for offset in range(1, gl.number_of_columns // 2 + 1):
+            column = gl.number_of_columns // 2 + offset
+            row = get_available_row_for_column(table, column)
+
+            if row is not None:
+                moves_list.append((row, column))
+
+            column = gl.number_of_columns // 2 - offset
+            row = get_available_row_for_column(table, column)
+
+            if row is not None:
+                moves_list.append((row, column))
+    else:
+        for offset in range(0, gl.number_of_columns // 2):
+            column = gl.number_of_columns // 2 - offset - 1
+            row = get_available_row_for_column(table, column)
+
+            if row is not None:
+                moves_list.append((row, column))
+
+            column = gl.number_of_columns // 2 + offset
+            row = get_available_row_for_column(table, column)
+
+            if row is not None:
+                moves_list.append((row, column))
+
+    return moves_list
+
+
+def is_table_filled(table):
+    &#34;&#34;&#34;
+    Checks if a specified table has been fully filled
+    :param table: table to check if has been filled
+    :return: True if the table if filled, False otherwise
+    &#34;&#34;&#34;
+    for row in table:
+        if 0 in row:
+            return False
+    return True
+
+
+def analyze_selected_pieces(analyzed_pieces):
+    &#34;&#34;&#34;
+    Gives a score for a combination of 4 consecutive locations in the table.
+
+    The score is higher for more AI pieces in the collection, lower for more player pieces in the collection and 0 if
+    both AI pieces and player pieces are found as it becomes impossible for those 4 to became winning positions for
+    either player
+    :param analyzed_pieces: 4 consecutive locations in the current game table that may contain pieces from either
+    players or both
+    :return: a score depending on how good or bad those 4 positions are for the AI&#39;s chances of winning
+    &#34;&#34;&#34;
+    if 1 in analyzed_pieces and 2 in analyzed_pieces:
+        return 0
+
+    if is_ai_first_player:
+        number_of_ai_pieces = analyzed_pieces.count(1)
+        number_of_player_pieces = analyzed_pieces.count(2)
+    else:
+        number_of_ai_pieces = analyzed_pieces.count(2)
+        number_of_player_pieces = analyzed_pieces.count(1)
+
+    if number_of_ai_pieces == 4:
+        return 10000
+    elif number_of_ai_pieces == 3:
+        return 500
+    elif number_of_ai_pieces == 2:
+        return 100
+    elif number_of_ai_pieces == 1:
+        return 10
+
+    elif number_of_player_pieces == 4:
+        return -10000
+    elif number_of_player_pieces == 3:
+        return -500
+    elif number_of_player_pieces == 2:
+        return -100
+    elif number_of_player_pieces == 1:
+        return -10
+
+    return 0
+
+
+def evaluate_table(table, is_table_in_winning_position, maximizing_player):
+    &#34;&#34;&#34;
+    Gives a score for a specified table based on how it impacts AI&#39;s chances of winning the game
+
+    It takes into account every possible combination of 4 consecutive positions on the board and each of those get an
+    individual score and the final score is the sum of all scores for the individual sets of 4 consecutive positions
+    If the board is already in a finished state like won ar draw a score cam immediately be returned
+    :param table: specified table to analyze and compute score for
+    :param is_table_in_winning_position: whether the game was won
+    :param maximizing_player: whether it is the turn of the AI
+    :return: a score based on the AI&#39;s chances of winning on the specified table
+    &#34;&#34;&#34;
+    if is_table_in_winning_position:
+        if maximizing_player:
+            return -10 * infinity
+        else:
+            return 10 * infinity
+
+    if is_table_filled(table):
+        return 0
+
+    score = 0
+
+    #  vertical
+    for row in range(0, gl.number_of_rows - 3):
+        for column in range(0, gl.number_of_columns):
+            analyzed_pieces = [table[row][column], table[row + 1][column], table[row + 2][column],
+                               table[row + 3][column]]
+            score += analyze_selected_pieces(analyzed_pieces)
+
+    #  horizontal
+    for row in range(0, gl.number_of_rows):
+        for column in range(0, gl.number_of_columns - 3):
+            analyzed_pieces = [table[row][column], table[row][column + 1], table[row][column + 2],
+                               table[row][column + 3]]
+            score += analyze_selected_pieces(analyzed_pieces)
+
+    #  main diagonal
+    for row in range(0, gl.number_of_rows - 3):
+        for column in range(0, gl.number_of_columns - 3):
+            analyzed_pieces = [table[row][column], table[row + 1][column + 1], table[row + 2][column + 2],
+                               table[row + 3][column + 3]]
+            score += analyze_selected_pieces(analyzed_pieces)
+
+    #  secondary diagonal
+    for row in range(0, gl.number_of_rows - 3):
+        for column in range(3, gl.number_of_columns):
+            analyzed_pieces = [table[row][column], table[row + 1][column - 1], table[row + 2][column - 2],
+                               table[row + 3][column - 3]]
+            score += analyze_selected_pieces(analyzed_pieces)
+
+    return score
+
+
+def scan_for_instant_win(table):
+    &#34;&#34;&#34;
+    Checks if there is an available win in one move
+    :param table: specified table to search winning move in
+    :return: a tuple (True, move) where move is the winning move if there exists one, (False, None) otherwise
+    &#34;&#34;&#34;
+    available_moves = get_available_moves_from_current_table(table)
+    for move in available_moves:
+        new_table = get_table_with_added_move(table, move[0], move[1], True)
+        if gl.is_move_winner(move[0], move[1], new_table)[0]:
+            return True, move
+    return False, None
+
+
+def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column):
+    &#34;&#34;&#34;
+    Minimax algorithm for determining what could be the best currently available move.
+
+    :param table: specified table to look for the best available move
+    :param depth: number of recursive calls left available
+    :param alpha: alpha minimax specific parameter for pruning the tree of possibilities and optimizing the algorithm
+    :param beta:  beta minimax specific parameter for pruning the tree of possibilities and optimizing the algorithm
+    :param maximizing_player: whether it is AI&#39;s turn or not
+    :param last_row: the row where the last piece was played in before this function call
+    :param last_column: the column where the last piece was played in before this function call
+    :return: tuple consisting of the best evaluation of explored tables and move required to get from the current table
+    to the best evaluated table
+    &#34;&#34;&#34;
+    is_table_in_winning_position = gl.is_move_winner(last_row, last_column, table)[0]
+
+    if is_table_filled(table) and is_table_in_winning_position == False:
+        return 0, None
+
+    best_move = get_available_moves_from_current_table(table)[0]
+    if depth == 0 or is_table_in_winning_position:
+        output = evaluate_table(table, is_table_in_winning_position, maximizing_player), best_move
+        return output
+
+    if maximizing_player:  # AI player
+
+        if depth == max_depth:
+            is_winnable_in_one_move = scan_for_instant_win(table)
+            if is_winnable_in_one_move[0]:
+                return infinity, is_winnable_in_one_move[1]
+
+        max_eval = -infinity
+
+        for move in get_available_moves_from_current_table(table):
+            new_table = get_table_with_added_move(table, move[0], move[1], maximizing_player)
+
+            eval = minimax(new_table, depth - 1, alpha, beta, False, move[0], move[1])[0]
+
+            if eval &gt; max_eval:
+                max_eval = eval
+                best_move = move
+
+            alpha = max(alpha, eval)
+            if beta &lt;= alpha:
+                break
+        return max_eval, best_move
+
+    else:
+        min_eval = +infinity
+        for move in get_available_moves_from_current_table(table):
+            new_table = get_table_with_added_move(table, move[0], move[1], maximizing_player)
+
+            eval = minimax(new_table, depth - 1, alpha, beta, True, move[0], move[1])[0]
+
+            if eval &lt; min_eval:
+                min_eval = eval
+                best_move = move
+            beta = min(beta, eval)
+            if beta &lt;= alpha:
+                break
+        return min_eval, best_move
+
+
+def pick_random_available_move():
+    &#34;&#34;&#34;
+    Selects a random available move
+    :return: some valid move in the current game
+    &#34;&#34;&#34;
+    moves = get_available_moves_from_current_table(gl.table)
+    return random.choice(moves)
+
+
+def make_a_move():
+    &#34;&#34;&#34;
+    Makes a move depending on the selected difficulty for the AI.
+
+    If the selected difficulty is easy the AI will always pick a random available valid move
+    If the selected difficulty is medium the AI will either pick a random available valid move or pick what it considers
+    to be the best available move currently, both with a chance of 1/2
+    If the selected difficulty is hard the AI will always pick what it considers to be the best available move currently
+    :return:
+    &#34;&#34;&#34;
+    print(difficulty)
+    if difficulty == 0:
+        return pick_random_available_move()
+    elif difficulty == 1:
+        if random.choice([0, 1]) == 0:
+            return pick_random_available_move()
+    return minimax(gl.table, max_depth, -infinity, +infinity, True, None, None)[1]
+
+
+
+if __name__ == &#39;__main__&#39;:
+    g.main()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ai.analyze_selected_pieces"><code class="name flex">
+<span>def <span class="ident">analyze_selected_pieces</span></span>(<span>analyzed_pieces)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gives a score for a combination of 4 consecutive locations in the table.</p>
+<p>The score is higher for more AI pieces in the collection, lower for more player pieces in the collection and 0 if
+both AI pieces and player pieces are found as it becomes impossible for those 4 to became winning positions for
+either player
+:param analyzed_pieces: 4 consecutive locations in the current game table that may contain pieces from either
+players or both
+:return: a score depending on how good or bad those 4 positions are for the AI's chances of winning</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def analyze_selected_pieces(analyzed_pieces):
+    &#34;&#34;&#34;
+    Gives a score for a combination of 4 consecutive locations in the table.
+
+    The score is higher for more AI pieces in the collection, lower for more player pieces in the collection and 0 if
+    both AI pieces and player pieces are found as it becomes impossible for those 4 to became winning positions for
+    either player
+    :param analyzed_pieces: 4 consecutive locations in the current game table that may contain pieces from either
+    players or both
+    :return: a score depending on how good or bad those 4 positions are for the AI&#39;s chances of winning
+    &#34;&#34;&#34;
+    if 1 in analyzed_pieces and 2 in analyzed_pieces:
+        return 0
+
+    if is_ai_first_player:
+        number_of_ai_pieces = analyzed_pieces.count(1)
+        number_of_player_pieces = analyzed_pieces.count(2)
+    else:
+        number_of_ai_pieces = analyzed_pieces.count(2)
+        number_of_player_pieces = analyzed_pieces.count(1)
+
+    if number_of_ai_pieces == 4:
+        return 10000
+    elif number_of_ai_pieces == 3:
+        return 500
+    elif number_of_ai_pieces == 2:
+        return 100
+    elif number_of_ai_pieces == 1:
+        return 10
+
+    elif number_of_player_pieces == 4:
+        return -10000
+    elif number_of_player_pieces == 3:
+        return -500
+    elif number_of_player_pieces == 2:
+        return -100
+    elif number_of_player_pieces == 1:
+        return -10
+
+    return 0</code></pre>
+</details>
+</dd>
+<dt id="ai.evaluate_table"><code class="name flex">
+<span>def <span class="ident">evaluate_table</span></span>(<span>table, is_table_in_winning_position, maximizing_player)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gives a score for a specified table based on how it impacts AI's chances of winning the game</p>
+<p>It takes into account every possible combination of 4 consecutive positions on the board and each of those get an
+individual score and the final score is the sum of all scores for the individual sets of 4 consecutive positions
+If the board is already in a finished state like won ar draw a score cam immediately be returned
+:param table: specified table to analyze and compute score for
+:param is_table_in_winning_position: whether the game was won
+:param maximizing_player: whether it is the turn of the AI
+:return: a score based on the AI's chances of winning on the specified table</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def evaluate_table(table, is_table_in_winning_position, maximizing_player):
+    &#34;&#34;&#34;
+    Gives a score for a specified table based on how it impacts AI&#39;s chances of winning the game
+
+    It takes into account every possible combination of 4 consecutive positions on the board and each of those get an
+    individual score and the final score is the sum of all scores for the individual sets of 4 consecutive positions
+    If the board is already in a finished state like won ar draw a score cam immediately be returned
+    :param table: specified table to analyze and compute score for
+    :param is_table_in_winning_position: whether the game was won
+    :param maximizing_player: whether it is the turn of the AI
+    :return: a score based on the AI&#39;s chances of winning on the specified table
+    &#34;&#34;&#34;
+    if is_table_in_winning_position:
+        if maximizing_player:
+            return -10 * infinity
+        else:
+            return 10 * infinity
+
+    if is_table_filled(table):
+        return 0
+
+    score = 0
+
+    #  vertical
+    for row in range(0, gl.number_of_rows - 3):
+        for column in range(0, gl.number_of_columns):
+            analyzed_pieces = [table[row][column], table[row + 1][column], table[row + 2][column],
+                               table[row + 3][column]]
+            score += analyze_selected_pieces(analyzed_pieces)
+
+    #  horizontal
+    for row in range(0, gl.number_of_rows):
+        for column in range(0, gl.number_of_columns - 3):
+            analyzed_pieces = [table[row][column], table[row][column + 1], table[row][column + 2],
+                               table[row][column + 3]]
+            score += analyze_selected_pieces(analyzed_pieces)
+
+    #  main diagonal
+    for row in range(0, gl.number_of_rows - 3):
+        for column in range(0, gl.number_of_columns - 3):
+            analyzed_pieces = [table[row][column], table[row + 1][column + 1], table[row + 2][column + 2],
+                               table[row + 3][column + 3]]
+            score += analyze_selected_pieces(analyzed_pieces)
+
+    #  secondary diagonal
+    for row in range(0, gl.number_of_rows - 3):
+        for column in range(3, gl.number_of_columns):
+            analyzed_pieces = [table[row][column], table[row + 1][column - 1], table[row + 2][column - 2],
+                               table[row + 3][column - 3]]
+            score += analyze_selected_pieces(analyzed_pieces)
+
+    return score</code></pre>
+</details>
+</dd>
+<dt id="ai.get_available_moves_from_current_table"><code class="name flex">
+<span>def <span class="ident">get_available_moves_from_current_table</span></span>(<span>table)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes a list of all the available moves in a specified table sorted by how close their position are to the center
+column(s) as those positions are usually better than others
+:param table: table to look for available moves in
+:return: a list of all the available moves sorted by their distance to the center column(s)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_available_moves_from_current_table(table):
+    &#34;&#34;&#34;
+    Computes a list of all the available moves in a specified table sorted by how close their position are to the center
+    column(s) as those positions are usually better than others
+    :param table: table to look for available moves in
+    :return: a list of all the available moves sorted by their distance to the center column(s)
+    &#34;&#34;&#34;
+    moves_list = []
+
+    if gl.number_of_columns % 2 == 1:
+        column = gl.number_of_columns // 2
+        row = get_available_row_for_column(table, column)
+
+        if row is not None:
+            moves_list.append((row, column))
+        for offset in range(1, gl.number_of_columns // 2 + 1):
+            column = gl.number_of_columns // 2 + offset
+            row = get_available_row_for_column(table, column)
+
+            if row is not None:
+                moves_list.append((row, column))
+
+            column = gl.number_of_columns // 2 - offset
+            row = get_available_row_for_column(table, column)
+
+            if row is not None:
+                moves_list.append((row, column))
+    else:
+        for offset in range(0, gl.number_of_columns // 2):
+            column = gl.number_of_columns // 2 - offset - 1
+            row = get_available_row_for_column(table, column)
+
+            if row is not None:
+                moves_list.append((row, column))
+
+            column = gl.number_of_columns // 2 + offset
+            row = get_available_row_for_column(table, column)
+
+            if row is not None:
+                moves_list.append((row, column))
+
+    return moves_list</code></pre>
+</details>
+</dd>
+<dt id="ai.get_available_row_for_column"><code class="name flex">
+<span>def <span class="ident">get_available_row_for_column</span></span>(<span>table, column)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Finds the playable row position for a specific column in a specific table configuration if the column is not already
+filled
+:param table: table to search row position for
+:param column: column in specified table to search row position for
+:return: row index if the column is not filled with pieces, None otherwise</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_available_row_for_column(table, column):
+    &#34;&#34;&#34;
+    Finds the playable row position for a specific column in a specific table configuration if the column is not already
+     filled
+    :param table: table to search row position for
+    :param column: column in specified table to search row position for
+    :return: row index if the column is not filled with pieces, None otherwise
+    &#34;&#34;&#34;
+    for row in range(len(table) - 1, -1, -1):
+        if table[row][column] == 0:
+            return row
+    return None</code></pre>
+</details>
+</dd>
+<dt id="ai.get_table_with_added_move"><code class="name flex">
+<span>def <span class="ident">get_table_with_added_move</span></span>(<span>table, row, column, maximizing_player)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Receives a table and returns that table with a new piece added to it at specified row and column
+:param table: table to add piece to
+:param row: row to add piece in
+:param column: column to add piece in
+:param maximizing_player: whether the current playing is the AI or the human
+:return: table with added piece at specified location</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_table_with_added_move(table, row, column, maximizing_player):
+    &#34;&#34;&#34;
+    Receives a table and returns that table with a new piece added to it at specified row and column
+    :param table: table to add piece to
+    :param row: row to add piece in
+    :param column: column to add piece in
+    :param maximizing_player: whether the current playing is the AI or the human
+    :return: table with added piece at specified location
+    &#34;&#34;&#34;
+    new_table = [row[:] for row in table]  # copies the original table in the new table
+
+    if (maximizing_player and is_ai_first_player) or (not maximizing_player and not is_ai_first_player):
+        player_piece = 1
+    else:
+        player_piece = 2
+
+    new_table[row][column] = player_piece
+
+    return new_table</code></pre>
+</details>
+</dd>
+<dt id="ai.is_table_filled"><code class="name flex">
+<span>def <span class="ident">is_table_filled</span></span>(<span>table)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if a specified table has been fully filled
+:param table: table to check if has been filled
+:return: True if the table if filled, False otherwise</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_table_filled(table):
+    &#34;&#34;&#34;
+    Checks if a specified table has been fully filled
+    :param table: table to check if has been filled
+    :return: True if the table if filled, False otherwise
+    &#34;&#34;&#34;
+    for row in table:
+        if 0 in row:
+            return False
+    return True</code></pre>
+</details>
+</dd>
+<dt id="ai.make_a_move"><code class="name flex">
+<span>def <span class="ident">make_a_move</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Makes a move depending on the selected difficulty for the AI.</p>
+<p>If the selected difficulty is easy the AI will always pick a random available valid move
+If the selected difficulty is medium the AI will either pick a random available valid move or pick what it considers
+to be the best available move currently, both with a chance of 1/2
+If the selected difficulty is hard the AI will always pick what it considers to be the best available move currently
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_a_move():
+    &#34;&#34;&#34;
+    Makes a move depending on the selected difficulty for the AI.
+
+    If the selected difficulty is easy the AI will always pick a random available valid move
+    If the selected difficulty is medium the AI will either pick a random available valid move or pick what it considers
+    to be the best available move currently, both with a chance of 1/2
+    If the selected difficulty is hard the AI will always pick what it considers to be the best available move currently
+    :return:
+    &#34;&#34;&#34;
+    print(difficulty)
+    if difficulty == 0:
+        return pick_random_available_move()
+    elif difficulty == 1:
+        if random.choice([0, 1]) == 0:
+            return pick_random_available_move()
+    return minimax(gl.table, max_depth, -infinity, +infinity, True, None, None)[1]</code></pre>
+</details>
+</dd>
+<dt id="ai.minimax"><code class="name flex">
+<span>def <span class="ident">minimax</span></span>(<span>table, depth, alpha, beta, maximizing_player, last_row, last_column)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Minimax algorithm for determining what could be the best currently available move.</p>
+<p>:param table: specified table to look for the best available move
+:param depth: number of recursive calls left available
+:param alpha: alpha minimax specific parameter for pruning the tree of possibilities and optimizing the algorithm
+:param beta:
+beta minimax specific parameter for pruning the tree of possibilities and optimizing the algorithm
+:param maximizing_player: whether it is AI's turn or not
+:param last_row: the row where the last piece was played in before this function call
+:param last_column: the column where the last piece was played in before this function call
+:return: tuple consisting of the best evaluation of explored tables and move required to get from the current table
+to the best evaluated table</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def minimax(table, depth, alpha, beta, maximizing_player, last_row, last_column):
+    &#34;&#34;&#34;
+    Minimax algorithm for determining what could be the best currently available move.
+
+    :param table: specified table to look for the best available move
+    :param depth: number of recursive calls left available
+    :param alpha: alpha minimax specific parameter for pruning the tree of possibilities and optimizing the algorithm
+    :param beta:  beta minimax specific parameter for pruning the tree of possibilities and optimizing the algorithm
+    :param maximizing_player: whether it is AI&#39;s turn or not
+    :param last_row: the row where the last piece was played in before this function call
+    :param last_column: the column where the last piece was played in before this function call
+    :return: tuple consisting of the best evaluation of explored tables and move required to get from the current table
+    to the best evaluated table
+    &#34;&#34;&#34;
+    is_table_in_winning_position = gl.is_move_winner(last_row, last_column, table)[0]
+
+    if is_table_filled(table) and is_table_in_winning_position == False:
+        return 0, None
+
+    best_move = get_available_moves_from_current_table(table)[0]
+    if depth == 0 or is_table_in_winning_position:
+        output = evaluate_table(table, is_table_in_winning_position, maximizing_player), best_move
+        return output
+
+    if maximizing_player:  # AI player
+
+        if depth == max_depth:
+            is_winnable_in_one_move = scan_for_instant_win(table)
+            if is_winnable_in_one_move[0]:
+                return infinity, is_winnable_in_one_move[1]
+
+        max_eval = -infinity
+
+        for move in get_available_moves_from_current_table(table):
+            new_table = get_table_with_added_move(table, move[0], move[1], maximizing_player)
+
+            eval = minimax(new_table, depth - 1, alpha, beta, False, move[0], move[1])[0]
+
+            if eval &gt; max_eval:
+                max_eval = eval
+                best_move = move
+
+            alpha = max(alpha, eval)
+            if beta &lt;= alpha:
+                break
+        return max_eval, best_move
+
+    else:
+        min_eval = +infinity
+        for move in get_available_moves_from_current_table(table):
+            new_table = get_table_with_added_move(table, move[0], move[1], maximizing_player)
+
+            eval = minimax(new_table, depth - 1, alpha, beta, True, move[0], move[1])[0]
+
+            if eval &lt; min_eval:
+                min_eval = eval
+                best_move = move
+            beta = min(beta, eval)
+            if beta &lt;= alpha:
+                break
+        return min_eval, best_move</code></pre>
+</details>
+</dd>
+<dt id="ai.pick_random_available_move"><code class="name flex">
+<span>def <span class="ident">pick_random_available_move</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Selects a random available move
+:return: some valid move in the current game</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pick_random_available_move():
+    &#34;&#34;&#34;
+    Selects a random available move
+    :return: some valid move in the current game
+    &#34;&#34;&#34;
+    moves = get_available_moves_from_current_table(gl.table)
+    return random.choice(moves)</code></pre>
+</details>
+</dd>
+<dt id="ai.scan_for_instant_win"><code class="name flex">
+<span>def <span class="ident">scan_for_instant_win</span></span>(<span>table)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if there is an available win in one move
+:param table: specified table to search winning move in
+:return: a tuple (True, move) where move is the winning move if there exists one, (False, None) otherwise</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scan_for_instant_win(table):
+    &#34;&#34;&#34;
+    Checks if there is an available win in one move
+    :param table: specified table to search winning move in
+    :return: a tuple (True, move) where move is the winning move if there exists one, (False, None) otherwise
+    &#34;&#34;&#34;
+    available_moves = get_available_moves_from_current_table(table)
+    for move in available_moves:
+        new_table = get_table_with_added_move(table, move[0], move[1], True)
+        if gl.is_move_winner(move[0], move[1], new_table)[0]:
+            return True, move
+    return False, None</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ai.analyze_selected_pieces" href="#ai.analyze_selected_pieces">analyze_selected_pieces</a></code></li>
+<li><code><a title="ai.evaluate_table" href="#ai.evaluate_table">evaluate_table</a></code></li>
+<li><code><a title="ai.get_available_moves_from_current_table" href="#ai.get_available_moves_from_current_table">get_available_moves_from_current_table</a></code></li>
+<li><code><a title="ai.get_available_row_for_column" href="#ai.get_available_row_for_column">get_available_row_for_column</a></code></li>
+<li><code><a title="ai.get_table_with_added_move" href="#ai.get_table_with_added_move">get_table_with_added_move</a></code></li>
+<li><code><a title="ai.is_table_filled" href="#ai.is_table_filled">is_table_filled</a></code></li>
+<li><code><a title="ai.make_a_move" href="#ai.make_a_move">make_a_move</a></code></li>
+<li><code><a title="ai.minimax" href="#ai.minimax">minimax</a></code></li>
+<li><code><a title="ai.pick_random_available_move" href="#ai.pick_random_available_move">pick_random_available_move</a></code></li>
+<li><code><a title="ai.scan_for_instant_win" href="#ai.scan_for_instant_win">scan_for_instant_win</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

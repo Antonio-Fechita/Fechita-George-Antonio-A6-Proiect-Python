@@ -6,6 +6,13 @@ import game_logic as gl
 
 
 def menu_page(root, row_count_slider, column_count_slider, difficulty):
+    """
+    Saves the current settings and changes the settings page with the menu page
+    :param root: the current window
+    :param row_count_slider: tkinter slider for the number of rows
+    :param column_count_slider: tkinter slider for the number of columns
+    :param difficulty: tkinter variable for the difficulty index where 0 = easy, 1 = medium, 2 = hard
+    """
     gl.number_of_rows = row_count_slider.get()
     gl.number_of_columns = column_count_slider.get()
     ai.difficulty = difficulty.get()
@@ -14,6 +21,13 @@ def menu_page(root, row_count_slider, column_count_slider, difficulty):
 
 
 def switch_ai_playing(switch_button, on, off):
+    """
+    Changes whether the game is played against an AI and also changes the appearance of the switch button to reflect the
+    current option
+    :param switch_button: tkinter button used as a switch
+    :param on: image file for the on aspect of the switch button
+    :param off: image file for the off aspect of the switch button
+    """
     ai.is_ai_playing = not ai.is_ai_playing
     if ai.is_ai_playing:
         switch_button.config(image=on)
@@ -22,6 +36,13 @@ def switch_ai_playing(switch_button, on, off):
 
 
 def switch_ai_first(switch_button, on, off):
+    """
+    Changes whether the AI is the first player and also changes the appearance of the switch button to reflect the
+    current option
+    :param switch_button: tkinter button used as a switch
+    :param on: image file for the on aspect of the switch button
+    :param off: image file for the off aspect of the switch button
+    """
     ai.is_ai_first_player = not ai.is_ai_first_player
     if ai.is_ai_first_player:
         switch_button.config(image=on)
@@ -30,6 +51,9 @@ def switch_ai_first(switch_button, on, off):
 
 
 def main():
+    """
+    Main starting point for the menu page
+    """
     ws = Tk()
     ws.geometry('300x500')
     ws.title('Settings')

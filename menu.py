@@ -4,20 +4,35 @@ import settings as st
 
 
 def game_page(ws):
+    """
+    Changes the menu page with the game page
+    :param ws: the current window
+    """
     ws.destroy()
     gp.main()
 
 
 def settings_page(ws):
+    """
+    Changes the menu page with the settings page
+    :param ws: the current window
+    """
     ws.destroy()
     st.main()
 
 
 def quit(ws):
+    """
+    Quits the application
+    :param ws: the current window
+    """
     ws.destroy()
 
 
 def main():
+    """
+    Main starting point for the menu page
+    """
     ws = Tk()
     ws.geometry('300x300')
     ws.title('Main Menu')
@@ -52,7 +67,6 @@ def main():
         font=f,
         command=lambda: quit(ws)
     ).pack(pady=10)
-
 
     ws.mainloop()
 
